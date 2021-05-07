@@ -1,0 +1,39 @@
+<div class="row g-0">
+    <div class="col-md-4">
+        <mat-card class="sprite-card" *ngFor="let item of pokemon">
+            <mat-card-header class="card-header">
+                <img mat-card-avatar class="example-header-image" [src]="item.sprites.front_default" [alt]="item.name">
+                <mat-card-title>
+                    <h1 class="first"> {{ item.name }} </h1>
+                </mat-card-title>
+
+                <mat-card-subtitle>
+                    <span class="badge bg-warning text-dark first" *ngFor="let type of pokemonTypes"> 
+                            {{ type.type.name }} 
+                        </span>
+                    <span> <h5> Nº {{ item.id }} </h5> </span>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="sprite-img" [src]="item.sprites.front_default" [alt]="item.name">
+        </mat-card>
+    </div>
+
+    <div class="col-md-4">
+        <mat-card class="stats-card">
+            <mat-card-header>
+                <img mat-card-avatar class="example-header-image" src="assets/icon/pokeball.png" alt="pokeball">
+                <h1>Stats</h1>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div *ngFor="let stat of pokemonStats">
+                    <h4 class="first "> {{ stat.stat.name}}
+                        <span class="badge bg-danger" aria-hidden="true"> {{ stat.base_stat }} </span>
+                    </h4>
+                    <mat-progress-bar mode="determinate" [value]="stat.base_stat"></mat-progress-bar>
+                    <hr>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
