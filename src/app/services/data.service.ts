@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  baseURLpokemon = environment.apiUrl;
+  baseURLpokemon = 'https://pokeapi.co/api/v2/pokemon';
 
   constructor(private http: HttpClient) {}
 
